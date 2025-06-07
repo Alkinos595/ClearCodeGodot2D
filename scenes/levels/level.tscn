@@ -1,4 +1,4 @@
-[gd_scene load_steps=18 format=4 uid="uid://4jwrkp01pqpq"]
+[gd_scene load_steps=19 format=4 uid="uid://4jwrkp01pqpq"]
 
 [ext_resource type="Script" uid="uid://cxwrfoj4m6g6d" path="res://scenes/levels/level.gd" id="1_b2cq8"]
 [ext_resource type="PackedScene" uid="uid://b5c7cmx7f04g8" path="res://scenes/gate.tscn" id="2_b2cq8"]
@@ -13,6 +13,7 @@
 [ext_resource type="Texture2D" uid="uid://d30owm3fl5m3u" path="res://graphics/tilesets/outside_walls.png" id="9_7pb6i"]
 [ext_resource type="Texture2D" uid="uid://cup6g4d1tqcjr" path="res://graphics/tilesets/soil.png" id="9_xfk5q"]
 [ext_resource type="PackedScene" uid="uid://btfq6cifkscsi" path="res://scenes/houses/house.tscn" id="11_qogh7"]
+[ext_resource type="PackedScene" uid="uid://biekct0rfnur4" path="res://scenes/objets/steam_vent.tscn" id="14_8iyoh"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_qogh7"]
 resource_name = "soil"
@@ -138,7 +139,7 @@ position = Vector2(-1891, 537)
 texture = ExtResource("8_8iyoh")
 
 [node name="House" parent="ground" instance=ExtResource("11_qogh7")]
-position = Vector2(-1598, 3339)
+position = Vector2(-1816, 3229)
 rotation = -2.18166
 
 [node name="Gate" parent="." instance=ExtResource("2_b2cq8")]
@@ -148,6 +149,9 @@ position = Vector2(597, -564)
 position = Vector2(640, 500)
 
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="SteamVent" parent="." instance=ExtResource("14_8iyoh")]
+position = Vector2(1173, 549)
 
 [connection signal="player_entered_gate" from="Gate" to="." method="_on_gate_player_entered_gate"]
 [connection signal="grenade" from="Player" to="." method="_on_player_grenade"]

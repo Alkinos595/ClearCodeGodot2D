@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://eispjft8fa67"]
+[gd_scene load_steps=21 format=4 uid="uid://eispjft8fa67"]
 
 [ext_resource type="PackedScene" uid="uid://4jwrkp01pqpq" path="res://scenes/levels/level.tscn" id="1_2s4ok"]
 [ext_resource type="Script" uid="uid://dtn41v2tmhhg2" path="res://scenes/levels/outside.gd" id="2_ex6t8"]
@@ -15,8 +15,7 @@
 [ext_resource type="PackedScene" uid="uid://btfq6cifkscsi" path="res://scenes/houses/house.tscn" id="11_oe17f"]
 [ext_resource type="PackedScene" uid="uid://biekct0rfnur4" path="res://scenes/objets/steam_vent.tscn" id="12_lbwx5"]
 [ext_resource type="PackedScene" uid="uid://cgp643ngmn566" path="res://scenes/objets/light_fan_animation.tscn" id="13_ddemh"]
-[ext_resource type="PackedScene" uid="uid://bt3l0feyhqqh4" path="res://scenes/exercise/box.tscn" id="16_uaeil"]
-[ext_resource type="PackedScene" uid="uid://befm3ktqfjy10" path="res://scenes/exercise/toilet.tscn" id="17_bjulg"]
+[ext_resource type="SpriteFrames" uid="uid://dlh7j00vato30" path="res://scenes/houses/fan-animation.tres" id="15_bjulg"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkmey"]
 resource_name = "soil"
@@ -148,17 +147,16 @@ position = Vector2(1173, 549)
 
 [node name="LightFanAnimation" parent="ground" index="6" instance=ExtResource("13_ddemh")]
 position = Vector2(-1778, 1820)
+sprite_frames = ExtResource("15_bjulg")
 autoplay = "default"
-metadata/_edit_lock_ = true
+frame_progress = 0.0
 
 [node name="Gate" parent="." index="1" instance=ExtResource("2_x73sx")]
 position = Vector2(597, -564)
 
-[node name="box" parent="." index="4" instance=ExtResource("16_uaeil")]
-position = Vector2(979, 894)
-
-[node name="toilet" parent="." index="5" instance=ExtResource("17_bjulg")]
-position = Vector2(625, 914)
+[node name="Player" parent="." index="3"]
+position = Vector2(647, 399)
+metadata/_edit_lock_ = true
 
 [connection signal="player_entered" from="ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="ground/House" to="." method="_on_house_player_exited"]

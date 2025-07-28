@@ -10,6 +10,8 @@ var can_grenade: bool = true
 
 var speed: int = max_speed
 
+
+
 func _process(_delta: float) -> void:
 	# input
 	var direction = Input.get_vector("left", "right", "up", "down")
@@ -21,7 +23,8 @@ func _process(_delta: float) -> void:
 	
 	# laser shooting input
 	var player_direction = (get_global_mouse_position() - position).normalized()
-	if Input.is_action_pressed("primary action") and can_laser:
+	if Input.is_action_pressed("primary action") and can_laser and Globals.laser_amount > 0:
+		Globals.laser_amount -= 1
 		$GPUParticles2D.emitting = true
 		# randomly selected a market2D for the laser start
 		var laser_markers = $LaserStartPositions.get_children()
@@ -32,7 +35,8 @@ func _process(_delta: float) -> void:
 		# emit the position we selected
 		laser.emit(selected_laser.global_position, player_direction)
 		
-	if Input.is_action_pressed("secondary action") and can_grenade:
+	if Input.is_action_pressed("secondary action") and can_grenade and Globals.grenade_amount > 0:
+		Globals.grenade_amount  -= 1
 		var grenade_markers = $GrenadeStartPositions.get_children()
 		var selected_grenade = grenade_markers[randi_range(0, grenade_markers.size() - 1)]
 		can_grenade = false

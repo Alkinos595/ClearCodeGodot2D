@@ -11,9 +11,13 @@ config_version=5
 [application]
 
 config/name="ClearCodeGodot2D"
-run/main_scene="uid://4jwrkp01pqpq"
+run/main_scene="uid://eispjft8fa67"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://icon.svg"
+
+[autoload]
+
+Globals="*res://globals/globals.gd"
 
 [display]
 

@@ -1,4 +1,4 @@
-[gd_scene load_steps=21 format=4 uid="uid://eispjft8fa67"]
+[gd_scene load_steps=22 format=4 uid="uid://eispjft8fa67"]
 
 [ext_resource type="PackedScene" uid="uid://4jwrkp01pqpq" path="res://scenes/levels/level.tscn" id="1_2s4ok"]
 [ext_resource type="Script" uid="uid://dtn41v2tmhhg2" path="res://scenes/levels/outside.gd" id="2_ex6t8"]
@@ -16,6 +16,7 @@
 [ext_resource type="PackedScene" uid="uid://biekct0rfnur4" path="res://scenes/objets/steam_vent.tscn" id="12_lbwx5"]
 [ext_resource type="PackedScene" uid="uid://cgp643ngmn566" path="res://scenes/objets/light_fan_animation.tscn" id="13_ddemh"]
 [ext_resource type="SpriteFrames" uid="uid://dlh7j00vato30" path="res://scenes/houses/fan-animation.tres" id="15_bjulg"]
+[ext_resource type="PackedScene" uid="uid://bb6k87ryefa35" path="res://scenes/items/item.tscn" id="17_uaeil"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_vkmey"]
 resource_name = "soil"
@@ -157,6 +158,9 @@ position = Vector2(597, -564)
 [node name="Player" parent="." index="3"]
 position = Vector2(647, 399)
 metadata/_edit_lock_ = true
+
+[node name="Item" parent="." index="5" instance=ExtResource("17_uaeil")]
+position = Vector2(390, 443)
 
 [connection signal="player_entered" from="ground/House" to="." method="_on_house_player_entered"]
 [connection signal="player_exited" from="ground/House" to="." method="_on_house_player_exited"]

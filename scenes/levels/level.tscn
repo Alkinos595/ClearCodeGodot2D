@@ -7,9 +7,17 @@
 [node name="Level" type="Node2D"]
 script = ExtResource("1_b2cq8")
 
+[node name="Decals" type="Node2D" parent="."]
+
 [node name="ground" type="Node2D" parent="."]
 
+[node name="Infestation" type="Node2D" parent="."]
+
+[node name="Items" type="Node2D" parent="."]
+
 [node name="Projectiles" type="Node2D" parent="."]
+
+[node name="Enemies" type="Node2D" parent="."]
 
 [node name="Player" parent="." instance=ExtResource("4_xb4v1")]
 position = Vector2(636, 556)
